@@ -210,28 +210,43 @@ const WorkoutPlanCard = ({
   };
 
   return (
-    <div className="flex items-center gap-3 rounded-xl border border-white/10 bg-[#15181e] p-3 sm:p-4">
-      <Image
-        src={workout.image}
-        alt={workout.name}
-        width={140}
-        height={80}
-        className="h-16 w-24 shrink-0 rounded-lg object-cover sm:h-20 sm:w-28"
-      />
+    <div className="rounded-xl border border-white/10 bg-[#15181e] p-3 sm:flex sm:items-center sm:gap-3 sm:p-4">
+      <div className="flex items-center gap-3">
+        <Image
+          src={workout.image}
+          alt={workout.name}
+          width={140}
+          height={80}
+          className="h-16 w-24 shrink-0 rounded-lg object-cover sm:h-20 sm:w-28"
+        />
 
-      <div className="min-w-0 flex-1">
+        <div className="min-w-0 flex-1 sm:hidden">
+          <h3
+            className="truncate text-sm font-bold uppercase text-white"
+            style={{ fontFamily: "Oswald, sans-serif" }}
+          >
+            {workout.name}
+          </h3>
+
+          <p className="mt-0.5 truncate text-[10px] text-gray-500">
+            {workout.equipment}
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-3 min-w-0 flex-1 sm:mt-0">
         <h3
-          className="truncate text-sm font-bold uppercase text-white sm:text-base"
+          className="hidden truncate text-sm font-bold uppercase text-white sm:block sm:text-base"
           style={{ fontFamily: "Oswald, sans-serif" }}
         >
           {workout.name}
         </h3>
 
-        <p className="mt-0.5 text-[10px] text-gray-500 sm:text-xs">
+        <p className="mt-0.5 hidden text-[10px] text-gray-500 sm:block sm:text-xs">
           {workout.equipment}
         </p>
 
-        <div className="mt-2 flex flex-wrap items-center gap-2 text-[9px] text-gray-400 sm:text-[10px]">
+        <div className="flex flex-wrap items-center gap-2 text-[9px] text-gray-400 sm:mt-2 sm:text-[10px]">
           <span className="flex items-center gap-1">
             <Clock3 size={11} />
             {workout.duration} min
@@ -249,10 +264,10 @@ const WorkoutPlanCard = ({
         </div>
       </div>
 
-      <div className="flex shrink-0 items-center gap-2">
+      <div className="mt-3 flex w-full items-center gap-2 sm:mt-0 sm:w-auto">
         <Link
           href={`/workout/${workout.id}`}
-          className="hidden rounded-full border border-white/10 px-3 py-2 text-[9px] text-gray-300 sm:block"
+          className="flex flex-1 items-center justify-center rounded-full border border-white/10 px-2 py-2 text-[9px] text-gray-300 sm:flex-none sm:px-3"
         >
           View Details
         </Link>
@@ -260,7 +275,7 @@ const WorkoutPlanCard = ({
         {activeTab === "today" && (
           <button
             onClick={handleDone}
-            className="hidden rounded-full bg-lime-400 px-3 py-2 text-[9px] font-bold text-black sm:flex sm:items-center sm:gap-1"
+            className="flex flex-1 items-center justify-center gap-1 rounded-full bg-lime-400 px-2 py-2 text-[9px] font-bold text-black sm:flex-none sm:px-3"
           >
             <Check size={11} />
             Mark as Done
@@ -276,7 +291,7 @@ const WorkoutPlanCard = ({
               toast.error("Task canceled");
             }
           }}
-          className="flex h-7 w-7 items-center justify-center rounded-full text-gray-500 hover:text-white"
+          className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-gray-500 hover:text-white"
         >
           <X size={14} />
         </button>
