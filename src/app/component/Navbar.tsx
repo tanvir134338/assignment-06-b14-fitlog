@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 
-const Navbar = () => {
+const Navbar = ({ activePage = "workouts" }) => {
   return (
     <nav className="border-b border-white/10 bg-[#0b0d10]">
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-2 px-3 py-5 sm:px-5 sm:py-5">
@@ -15,7 +15,7 @@ const Navbar = () => {
           />
 
           <span
-            className="font-oswald bordertext-sm font-bold text-white sm:text-base"
+            className="text-sm font-bold text-white sm:text-base"
             style={{ fontFamily: "Oswald, sans-serif" }}
           >
             FITLOG
@@ -25,14 +25,22 @@ const Navbar = () => {
         <div className="flex shrink-0 items-center gap-0.5 text-xs sm:gap-2 sm:text-sm">
           <Link
             href="/"
-            className="rounded-full bg-[#182b0b] px-2.5 py-1.5 font-semibold text-lime-400 sm:px-4 sm:py-2"
+            className={
+              activePage === "workouts"
+                ? "rounded-full bg-[#182b0b] px-2.5 py-1.5 font-semibold text-lime-400 sm:px-4 sm:py-2"
+                : "px-2.5 py-1.5 text-gray-400 sm:px-4 sm:py-2"
+            }
           >
             Workouts
           </Link>
 
           <Link
             href="/my-plan"
-            className="px-2 py-1.5 text-gray-400 sm:px-4 sm:py-2"
+            className={
+              activePage === "my-plan"
+                ? "rounded-full bg-[#182b0b] px-2.5 py-1.5 font-semibold text-lime-400 sm:px-4 sm:py-2"
+                : "px-2 py-1.5 text-gray-400 sm:px-4 sm:py-2"
+            }
           >
             My Plan
           </Link>

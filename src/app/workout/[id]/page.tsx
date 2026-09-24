@@ -31,7 +31,7 @@ const WorkoutDetailsPage = async ({
 
   return (
     <main className="min-h-screen bg-[#0b0d10]">
-      <Navbar />
+      <Navbar activePage="none" />
 
       <section className="mx-auto max-w-7xl px-4 py-8 sm:px-5 lg:py-10">
         <div className="grid gap-8 lg:grid-cols-2">
