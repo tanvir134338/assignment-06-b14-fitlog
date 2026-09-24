@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { useRouter, useSearchParams } from "next/navigation";
 import { Clock3, Flame, Star, X, Check } from "lucide-react";
 import { toast, ToastContainer } from "react-toastify";
 import Navbar from "../component/Navbar";
@@ -10,10 +11,14 @@ import { usePlan, Workout } from "../context/PlanContext";
 import Image from "next/image";
 
 const MyPlanPage = () => {
-  const [activeTab, setActiveTab] = useState("today");
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
   const [sortBy, setSortBy] = useState("duration");
 
   const { plan, saved, removeFromPlan, removeFromSaved } = usePlan();
+
+  const activeTab = searchParams.get("tab") === "saved" ? "saved" : "today";
 
   const currentList = activeTab === "today" ? plan : saved;
 
@@ -90,7 +95,9 @@ const MyPlanPage = () => {
         <div className="mt-6 flex items-center justify-between gap-3">
           <div className="flex rounded-lg border border-white/10 bg-[#15181e] p-1">
             <button
-              onClick={() => setActiveTab("today")}
+              onClick={() => {
+                router.push("/my-plan?tab=today");
+              }}
               className={
                 activeTab === "today"
                   ? "rounded-md bg-[#202631] px-3 py-1.5 text-[10px] text-white sm:px-5 sm:text-xs"
@@ -101,7 +108,9 @@ const MyPlanPage = () => {
             </button>
 
             <button
-              onClick={() => setActiveTab("saved")}
+              onClick={() => {
+                router.push("/my-plan?tab=saved");
+              }}
               className={
                 activeTab === "saved"
                   ? "rounded-md bg-[#202631] px-3 py-1.5 text-[10px] text-white sm:px-5 sm:text-xs"

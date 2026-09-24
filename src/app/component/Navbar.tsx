@@ -52,17 +52,20 @@ const Navbar = ({ activePage = "workouts" }) => {
         </div>
 
         <div className="flex shrink-0 items-center gap-2 text-[10px] text-gray-300 sm:gap-5 sm:text-sm">
-          <span className="flex items-center gap-1">
+          <Link href="/my-plan?tab=today" className="flex items-center gap-1">
             Plan
             <span className="flex h-4 w-4 items-center justify-center rounded-full bg-lime-400 text-[9px] font-bold text-black sm:h-5 sm:w-5 sm:text-xs">
               {plan.length}
             </span>
-          </span>
+          </Link>
 
-          <span className="flex items-center gap-1">
+          <Link
+            href="/my-plan?tab=saved"
+            className="flex items-center gap-1 rounded-full border border-white/20 px-2 py-1"
+          >
             Saved
             <span className="text-gray-400">{saved.length}</span>
-          </span>
+          </Link>
         </div>
       </div>
     </nav>
