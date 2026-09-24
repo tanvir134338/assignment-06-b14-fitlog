@@ -1,6 +1,6 @@
 import Navbar from "./component/Navbar";
-import Image from "next/image";
 import Hero from "./component/Hero";
+import WorkoutCard from "./component/WorkoutCard";
 
 type Workout = {
   id: number;
@@ -8,9 +8,14 @@ type Workout = {
   image: string;
   muscleGroups: string[];
   equipment: string;
+  difficulty: string;
   duration: number;
   caloriesBurned: number;
+  sets: number;
+  reps: string;
   rating: number;
+  description: string;
+  instructions: string[];
 };
 
 const HomePage = async () => {
@@ -23,28 +28,26 @@ const HomePage = async () => {
   return (
     <main>
       <Navbar />
+
       <Hero />
-      <h1>FitLog</h1>
 
-      <div>
-        {data.map((workout) => (
-          <div key={workout.id}>
-            <h2>{workout.name}</h2>
+      <section id="library" className="mx-auto max-w-7xl px-3 py-10 sm:px-5">
+        <div className="mb-5">
+          <h2 className="text-xl font-black uppercase leading-none text-white">
+            THE LIBRARY
+          </h2>
 
-            <Image
-              src={workout.image}
-              alt={workout.name}
-              width={300}
-              height={200}
-            />
+          <p className="mt-1 text-[15px] text-gray-500 sm:text-[13px]">
+            Twelve lifts covering every major muscle group.
+          </p>
+        </div>
 
-            <p>{workout.equipment}</p>
-            <p>{workout.duration} minutes</p>
-            <p>{workout.caloriesBurned} kcal</p>
-            <p>Rating: {workout.rating}</p>
-          </div>
-        ))}
-      </div>
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {data.map((workout) => (
+            <WorkoutCard key={workout.id} workout={workout} />
+          ))}
+        </div>
+      </section>
     </main>
   );
 };
