@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Navbar from "../../component/Navbar";
 import Footer from "../../component/Footer";
+import WorkoutActions from "../../component/WorkoutActions";
 
 type Workout = {
   id: number;
@@ -128,15 +129,7 @@ const WorkoutDetailsPage = async ({
               </ol>
             </div>
 
-            <div className="mt-6 flex flex-wrap gap-3">
-              <button className="rounded-md bg-lime-400 px-4 py-3 text-xs font-bold text-black">
-                ADD TO TODAY&apos;S PLAN
-              </button>
-
-              <button className="rounded-md border border-white/10 px-4 py-3 text-xs text-gray-300">
-                SAVE FOR LATER
-              </button>
-            </div>
+            <WorkoutActions workout={workout} />
           </div>
         </div>
       </section>
