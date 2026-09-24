@@ -1,5 +1,6 @@
 import Navbar from "./component/Navbar";
 import Image from "next/image";
+import Hero from "./component/Hero";
 
 type Workout = {
   id: number;
@@ -22,6 +23,7 @@ const HomePage = async () => {
   return (
     <main>
       <Navbar />
+      <Hero />
       <h1>FitLog</h1>
 
       <div>
