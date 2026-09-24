@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowDown } from "lucide-react";
 
 const Hero = () => {
   return (
@@ -37,9 +38,10 @@ const Hero = () => {
 
           <Link
             href="#library"
-            className="mt-6 inline-block rounded-md bg-lime-400 px-5 py-3 text-xs font-bold text-black"
+            className="mt-6 inline-flex items-center gap-2 rounded-md bg-lime-400 px-5 py-3 text-xs font-bold text-black"
           >
             BROWSE WORKOUTS
+            <ArrowDown size={14} />
           </Link>
         </div>
 

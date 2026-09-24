@@ -1,5 +1,6 @@
 "use client";
 
+import { Plus, Bookmark } from "lucide-react";
 import { usePlan } from "../context/PlanContext";
 import { toast, ToastContainer } from "react-toastify";
 
@@ -51,16 +52,20 @@ const WorkoutActions = ({ workout }: { workout: Workout }) => {
         <button
           onClick={handleAddToPlan}
           disabled={alreadyInPlan}
-          className="rounded-md bg-lime-400 px-4 py-3 text-xs font-bold text-black disabled:cursor-not-allowed disabled:opacity-50"
+          className="inline-flex items-center gap-2 rounded-md bg-lime-400 px-4 py-3 text-xs font-bold text-black disabled:cursor-not-allowed disabled:opacity-50"
         >
+          <Plus size={14} />
+
           {alreadyInPlan ? "ADDED TO TODAY'S PLAN" : "ADD TO TODAY'S PLAN"}
         </button>
 
         <button
           onClick={handleSave}
           disabled={alreadySaved}
-          className="rounded-md border border-white/10 px-4 py-3 text-xs text-gray-300 disabled:cursor-not-allowed disabled:opacity-50"
+          className="inline-flex items-center gap-2 rounded-md border border-white/10 px-4 py-3 text-xs text-gray-300 disabled:cursor-not-allowed disabled:opacity-50"
         >
+          <Bookmark size={14} />
+
           {alreadySaved ? "SAVED" : "SAVE FOR LATER"}
         </button>
       </div>
