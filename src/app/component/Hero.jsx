@@ -12,7 +12,7 @@ const Hero = () => {
 
           <h1
             className="text-3xl font-black uppercase leading-[0.9] tracking-tight text-white sm:text-4xl lg:text-[44px] xl:text-5xl"
-            style={{ fontFamily: "Arial Narrow" }}
+            style={{ fontFamily: "Oswald, sans-serif" }}
           >
             <span className="block whitespace-nowrap">
               TRAIN WITH INTENT. LOG

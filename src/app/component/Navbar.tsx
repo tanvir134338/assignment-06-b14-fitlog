@@ -15,8 +15,8 @@ const Navbar = () => {
           />
 
           <span
-            className="text-sm font-bold text-white sm:text-base"
-            style={{ fontFamily: "Arial Narrow" }}
+            className="font-oswald bordertext-sm font-bold text-white sm:text-base"
+            style={{ fontFamily: "Oswald, sans-serif" }}
           >
             FITLOG
           </span>

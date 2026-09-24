@@ -1,6 +1,7 @@
 import Navbar from "./component/Navbar";
 import Hero from "./component/Hero";
 import WorkoutCard from "./component/WorkoutCard";
+import Footer from "./component/Footer";
 
 type Workout = {
   id: number;
@@ -48,6 +49,7 @@ const HomePage = async () => {
           ))}
         </div>
       </section>
+      <Footer />
     </main>
   );
 };

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { Clock3, Flame, Star } from "lucide-react";
 
 type Workout = {
@@ -19,13 +20,16 @@ type Workout = {
 
 const WorkoutCard = ({ workout }: { workout: Workout }) => {
   return (
-    <div className="overflow-hidden rounded-lg border border-white/10 bg-[#15181e]">
+    <Link
+      href={`/workout/${workout.id}`}
+      className="block overflow-hidden rounded-lg border border-white/10 bg-[#15181e]"
+    >
       <Image
         src={workout.image}
         alt={workout.name}
         width={400}
         height={220}
-        className="h-86 w-full object-cover sm:h-"
+        className="h-86 w-full object-cover sm:h-90"
       />
 
       <div className="px-3 py-3">
@@ -40,7 +44,7 @@ const WorkoutCard = ({ workout }: { workout: Workout }) => {
           ))}
         </div>
 
-        <h3 className="text-[17px] font-bold uppercase leading-tight text-white sm:text-m">
+        <h3 className="text-[17px] font-bold uppercase leading-tight text-white sm:text-base">
           {workout.name}
         </h3>
 
@@ -63,7 +67,7 @@ const WorkoutCard = ({ workout }: { workout: Workout }) => {
           </span>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
