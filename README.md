@@ -4,10 +4,7 @@ FitLog is a dark, responsive workout library built with Next.js. It helps users 
 
 ## Live Website
 
-
-```text
-[https://your-live-site-url.com](https://assignment-06-b14-fitlog.vercel.app/)
-```
+https://your-live-site-url.com](https://assignment-06-b14-fitlog.vercel.app/
 
 ## Project Overview
 
