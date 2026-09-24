@@ -42,25 +42,19 @@ The application uses a dark gym-inspired interface with a lime accent color and 
 
 ### Home
 
-```text
-/
-```
+https://assignment-06-b14-fitlog.vercel.app/
 
 Contains the hero section, workout library, workout cards, navigation, and footer.
 
 ### Workout Details
 
-```text
-/workout/[id]
-```
+https://assignment-06-b14-fitlog.vercel.app/#library
 
 Displays complete information about a selected workout, including equipment, difficulty, sets, reps, duration, calories, rating, and instructions.
 
 ### My Plan
 
-```text
-/my-plan
-```
+https://assignment-06-b14-fitlog.vercel.app/my-plan
 
 Manages Today's Plan, Saved Workouts, statistics, sorting, and workout actions.
 
